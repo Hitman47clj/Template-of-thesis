@@ -1,0 +1,115 @@
+\ProvidesPackage{myscnu}
+% 这里添加你的论文中专门使用的宏包
+
+% 算法以及列表环境
+\RequirePackage{cases,listings}
+\RequirePackage{fancyvrb}
+\RequirePackage[chapter]{algorithm}
+\RequirePackage{algorithmic}
+
+
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage {tikz}
+
+
+\def\bea#1\eea{\begin{align}#1\end{align}}
+
+\newcommand{\eps}{\epsilon}
+\makeatletter
+\def\slash#1{{\mathpalette\c@ncel{#1}}} % TeXbook, bottom of p360
+\makeatother
+
+\newcommand\beq{\begin{eqnarray}}
+\newcommand\eeq{\end{eqnarray}}
+
+\newcommand\la{\langle}
+\newcommand\ra{\rangle}
+
+\newcommand{\sslash}[1]{\not{\!#1}}
+\newcommand{\lslash}[1]{\not{\!\!#1}}
+
+\def\Pslash{\rlap/{\mkern-1mu P}}
+\def\ellslash{\rlap/{\mkern-1mu \ell}}
+\def\Sslash{\rlap/{\mkern-1mu S}}
+\def\pslash{\rlap/{\mkern-1mu p}}
+\def\Pslash{\rlap/{\mkern-1mu P}}
+\def\qslash{\rlap/{\mkern-1mu q}}
+\def\xslash{\rlap/{\mkern-1mu x}}
+\def\wslash{\rlap/{\mkern-1mu w}}
+\def\ellslash{\rlap/{\mkern-1mu \ell}}
+\def\kslash{\slash{\mkern-1mu k}}
+\def\nslash{\slash{\mkern-1mu n}}
+\def\Dslash{\slash{\mkern-1mu D}}
+\def\Sslash{\slash{\mkern-1mu S}}
+\def\xhat{\widehat{x}}
+\def\zhat{\widehat{z}}
+\def\khat{\hat{k}}
+\def\khat{\hat{k}}
+\def\phat{\hat{p}}
+\def\qhat{\hat{q}}
+\def\pvec{\vec{p}}
+\def\qvec{\vec{q}}
+\def\kvec{\vec{k}}
+\def\fhat{\widehat{f}}
+\def\hhat{\widehat{h}}
+\def\Mhat{\widehat{M}}
+\def\Nhat{\widehat{N}}
+\def\Ehat{\widehat{E}}
+\def\Hhat{\widehat{H}}
+\def\ehat{\widehat{e}}
+\def\Ghat{\widehat{G}}
+\def\shat{\widehat{s}}
+\def\dhat{\widehat{d}}
+\def\that{\widehat{t}}
+\def\uhat{\widehat{u}}
+\def\Svec{\vec{S}}
+\def\sti{\tilde{s}}
+\def\tti{\tilde{t}}
+\def\uti{\tilde{u}}
+\def\qed{\raisebox{.2ex}{.}\raisebox{1.2ex}{.}\raisebox{.2ex}{.}}
+
+\def\Gtilde{\tilde{G}}
+\def\leftDalperp{\overleftarrow{D^\alpha_\perp}}
+\def\rightDalperp{\overrightarrow{D^\alpha_\perp}}
+\def\GFt{\widetilde{G}_F}
+\def\GDt{\widetilde{G}_D}
+\def\gt{\widetilde{g}}
+\def\xpp{x^\prime p^\prime}
+
+
+
+% 配置Lstlisting
+\lstset{
+  columns=flexible,sensitive=true,lineskip=-3pt,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\ttfamily,
+  commentstyle=\color{red!50!green!50!blue!50},
+  numbers=left,numberstyle=\tiny,
+  xleftmargin=0.5em,xrightmargin=0.5em,aboveskip=0.5em,
+  showstringspaces=false,breaklines=true,extendedchars=true,escapeinside=``,
+  frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20}}
+
+% 配置算法包
+\algsetup{indent=3em}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{已知:}}
+\renewcommand{\algorithmicensure}{\textbf{求:}}
+
+\DefineVerbatimEnvironment{code}{Verbatim}%
+  {frame=single,framerule=0.3mm,rulecolor=\color{black},%
+   fillcolor=\color{red!20!green!20!blue!20},framesep=1mm,fontsize=\small}
+
+% 自定义其他命令
+\newcommand{\myscnu}{我的导言}
+\newcommand{\ve}[1]{\ensuremath{\bm #1}}
+
+% tabularx 中的 Z 环境，居中自动调整
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% %
+\endinput
